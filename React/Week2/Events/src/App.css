@@ -34,13 +34,20 @@
 }
 
 .card {
-  margin: 20px;
-  max-width: 300px;
-  border: 1px solid gray;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+nav {
+  background: #ee9972;
+  padding: 20px;
+}
+.nav-item {
+  color: #edefee;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 100px;
 }

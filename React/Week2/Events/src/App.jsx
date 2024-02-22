@@ -1,14 +1,13 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import Heading from "./Heading";
-import Card from "./Card";
 import "./App.css";
-
-//Creating first Component
-/* function Heading() {
-  return <h1>This is a h1 Heading</h1>;
-} */
+import Fruits from "./Fruits";
+import FruitsCounter from "./FruitsCounter";
+import Homepage from "./Homepage";
+import AboutLittleLemon from "./AboutLittleLemon";
+import Contact from "./Contact";
+import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,10 +15,23 @@ function App() {
   return (
     <>
       <div>
-        <Heading firstName="Bob" />
-        <Heading firstName="George" />
-        <Card h2=" first card is h2" />
-        <Card h2=" Second card is h3" />
+        <Link to="/" className="nav-item">
+          Homepage
+        </Link>
+        <Link to="/about" className="nav-item">
+          About Little Lemons
+        </Link>
+        <Link to="/contact" className="nav-item">
+          Contacts
+        </Link>
+
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/about" element={<AboutLittleLemon />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+      <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -27,6 +39,9 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
+      <Fruits>
+        <FruitsCounter />
+      </Fruits>
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
