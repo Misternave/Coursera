@@ -1,8 +1,8 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import DessertsList from "./DessertsList";
+import { ThemeProvider, useTheme } from "./ThemeContext";
+import Switch from "./Switch";
 
 const desserts = [
   {
@@ -35,6 +35,64 @@ const validateEmail = (email) => {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     );
 };
+//Third assigment COntext
+
+const Title = ({ children }) => {
+  const { theme } = useTheme();
+  return (
+    <h2
+      style={{
+        color: theme === "light" ? "black" : "white",
+      }}
+    >
+      {children}
+    </h2>
+  );
+};
+
+const Paragraph = ({ children }) => {
+  const { theme } = useTheme();
+  return (
+    <p
+      style={{
+        color: theme === "light" ? "black" : "white",
+      }}
+    >
+      {children}
+    </p>
+  );
+};
+
+const Content = () => {
+  return (
+    <div>
+      <Paragraph>
+        We are a pizza loving family. And for years, I searched and searched and
+        searched for the perfect pizza dough recipe. I tried dozens, or more.
+        And while some were good, none of them were that recipe that would make
+        me stop trying all of the others.
+      </Paragraph>
+    </div>
+  );
+};
+
+const Header = () => {
+  return (
+    <header>
+      <Title>Little Lemon 🍕</Title>
+      <Switch />
+    </header>
+  );
+};
+
+const Page = () => {
+  return (
+    <div className="Page">
+      <Title>When it comes to dough</Title>
+      <Content />
+    </div>
+  );
+};
 
 function App() {
   const [firstName, setFirstName] = useState("");
@@ -45,6 +103,7 @@ function App() {
     isTouched: false,
   });
   const [role, setRole] = useState("role");
+  const { theme } = useTheme();
 
   const PasswordErrorMessage = () => {
     return (
@@ -80,6 +139,16 @@ function App() {
 
   return (
     <>
+      <div
+        className="App"
+        style={{
+          backgroundColor: theme === "light" ? "white" : "black",
+        }}
+      >
+        <Header />
+        <Page />
+      </div>
+
       <div>
         <DessertsList data={desserts} />
       </div>
@@ -154,4 +223,12 @@ function App() {
   );
 }
 
-export default App;
+function Root() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}
+
+export default Root;
