@@ -1,0 +1,55 @@
+body {
+  background-color: lemonchiffon;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+header > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+nav ul :hover {
+  background-color: rgb(5, 134, 5);
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.imgFooter img {
+  width: 100px;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+
+section {
+  display: flex;
+}
+
+article {
+  flex: 1;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10%;
+}
