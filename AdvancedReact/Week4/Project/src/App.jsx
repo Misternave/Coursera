@@ -13,12 +13,6 @@ function App() {
     <ChakraProvider>
       <AlertProvider>
         <Header />
-        {/* <Routes>
-          <Route path="/" element={<LandingSection />} />
-          <Route path="/Landing" element={<LandingSection />} />
-          <Route path="/projetcs" element={<ProjectsSection />} />
-          <Route path="/Contact" element={<ContactMeSection />} />
-        </Routes> */}
         <LandingSection />
         <ProjectsSection />
         <ContactMeSection />

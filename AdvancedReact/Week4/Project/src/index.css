@@ -22,3 +22,11 @@ nav > a {
 .iconsMedia {
   width: 20%;
 }
+
+.landingTittle {
+  font-size: 3rem;
+}
+
+.arrow {
+  margin-left: 2%;
+}

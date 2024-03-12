@@ -17,8 +17,8 @@ const LandingSection = () => (
   >
     <Avatar src=" https://i.pravatar.cc/150?img=7" />
     <p>{greeting}</p>
-    <h1>{bio1}</h1>
-    <h1>{bio2}</h1>
+    <h1 className="landingTittle">{bio1}</h1>
+    <h1 className="landingTittle">{bio2}</h1>
   </FullScreenSection>
 );
 

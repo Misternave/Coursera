@@ -13,9 +13,9 @@ const Card = ({ title, description, imageSrc }) => {
       <Image src={imageSrc} />
       <p>{title}</p>
       <p>{description}</p>
-      <div>
+      <div className="seemore">
         See More
-        <FontAwesomeIcon icon={faArrowRight} size="1x" />
+        <FontAwesomeIcon icon={faArrowRight} size="1x" className="arrow" />
       </div>
     </div>
   );
